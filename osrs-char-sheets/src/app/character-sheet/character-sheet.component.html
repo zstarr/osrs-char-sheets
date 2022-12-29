@@ -1,0 +1,19 @@
+<div *ngIf="character | async; else loading">
+  <form [formGroup]="charForm" class="window">
+
+    <char-sheet-general [formGroup]="charForm"></char-sheet-general>
+
+    <char-sheet-abilities [formGroup]="charForm"></char-sheet-abilities>
+
+    <char-sheet-defense [formGroup]="charForm"></char-sheet-defense>
+
+    <char-sheet-spells [formGroup]="charForm"></char-sheet-spells>
+
+  </form>
+
+  <char-sheet-nav-bar [character]="character"></char-sheet-nav-bar>
+</div>
+
+<ng-template #loading>
+  Loading User...
+</ng-template>

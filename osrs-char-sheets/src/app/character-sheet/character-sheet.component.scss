@@ -1,0 +1,19 @@
+.parent-card {
+  max-width: 1000px;
+  width: 90%;
+  margin: 10px auto;
+}
+
+mat-form-field {
+  padding: 5px 5px 5px 5px;
+  width: 190px;
+}
+
+.avatar-icon {
+  font-size: 40px;
+}
+
+.window {
+  height: calc(100vh - 124px);
+  overflow: auto;
+}

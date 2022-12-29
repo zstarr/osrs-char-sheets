@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "vars";
+//@import '~firebaseui/dist/firebaseui.css';
+
+html,
+body {
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url(https://www.runescape.com/img/rsp777/bg2.jpg);
+  background-size: contain;
+}

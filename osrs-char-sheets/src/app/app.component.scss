@@ -1,0 +1,26 @@
+@import "vars";
+
+mat-toolbar {
+  height: 60px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.sidenav-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  background: url(https://www.runescape.com/img/rsp777/bg2.jpg);
+  background-size: contain;
+}
+
+.sidenav {
+  padding: 20px;
+  width: auto;
+  //background: url(https://www.runescape.com/img/rsp777/hiscores/banner_middle2.gif) repeat-y;
+}
+
+.logout {
+  margin-top: 10px;
+}

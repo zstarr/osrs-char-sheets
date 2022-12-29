@@ -1,0 +1,19 @@
+<div class="header-text">
+  <div mat-subheader>Characters:</div>
+  <div>
+    <button mat-icon-button (click)="addCharacter()">
+      <mat-icon>add_circle</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="mat-list">
+  <mat-selection-list #chars [multiple]="false">
+    <mat-list-option
+      *ngFor="let char of characters"
+      [value]="char"
+      (click)="loadCharacter(char)"
+    >
+      {{ char.characterName }}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
