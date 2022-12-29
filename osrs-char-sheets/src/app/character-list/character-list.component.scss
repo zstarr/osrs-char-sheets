@@ -14,3 +14,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.mdc-list-item--selected .mdc-list-item__primary-text, .mdc-list-item--activated .mdc-list-item__primary-text {
+  color: black;
+}

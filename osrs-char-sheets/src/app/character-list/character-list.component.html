@@ -1,5 +1,5 @@
 <div class="header-text">
-  <div mat-subheader>Characters:</div>
+  <div mat-subheader tabindex="1">Characters:</div>
   <div>
     <button mat-icon-button (click)="addCharacter()">
       <mat-icon>add_circle</mat-icon>
@@ -12,6 +12,7 @@
       *ngFor="let char of characters"
       [value]="char"
       (click)="loadCharacter(char)"
+      [disableRipple]="true"
     >
       {{ char.characterName }}
     </mat-list-option>

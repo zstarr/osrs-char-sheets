@@ -1,0 +1,14 @@
+.container {
+  background: url(https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif) no-repeat;
+  background-size: contain;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mat-mdc-dialog-actions.mat-mdc-dialog-actions-align-end, .mat-mdc-dialog-actions[align=end] {
+  background: url(https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif) no-repeat;
+  background-size: cover;
+  width: 100%;
+}

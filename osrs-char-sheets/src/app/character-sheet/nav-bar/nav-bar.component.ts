@@ -51,5 +51,6 @@ export class NavBarComponent implements OnInit {
 @Component({
   selector: 'character-delete',
   templateUrl: 'character-delete.html',
+  styleUrls: ['./character-delete.scss']
 })
 export class CharacterDeleteDialog {}
