@@ -1,18 +1,16 @@
-<div class="container">
-  <img src="https://www.runescape.com/img/rsp777/hiscores/scroll_top.gif" style="width:80%">
-  <div class="wrapper">
-    <div *ngIf="auth.user | async as user; else showLogin">
-    <h1>Hello {{ user.displayName }}!</h1>
-    <h2>Please select a character to continue.</h2>
-    <button (click)="logout()">Logout</button>
-  </div>
-  <ng-template #showLogin>
-    <h1>Hello...</h1>
-    <h2>Under construction. No point using because I'll probably break it all again.</h2>
 
-    <p>Please login.</p>
-    <a (click)="login()"><div class="google-login"></div></a>
-  </ng-template>
-  </div>
-  <img src="https://www.runescape.com/img/rsp777/hiscores/scroll_bottom.gif" style="width:80%">
+<div *ngIf="auth.user | async as user; else showLogin">
+<h1>Hello {{ user.displayName }}!</h1>
+<h2>Please select a character to continue.</h2>
+<button (click)="logout()">Logout</button>
 </div>
+<ng-template #showLogin>
+<h1>Hello...</h1>
+<h2>Under construction. No point using because I'll probably break it all again.</h2>
+
+<p>Please login.</p>
+<a (click)="login()"><div class="google-login"></div></a>
+</ng-template>
+
+
+

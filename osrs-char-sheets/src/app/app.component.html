@@ -17,5 +17,14 @@
     <ng-template #showLogin><p>You must be logged in to see characters.</p></ng-template>
   </mat-drawer>
 
-  <router-outlet></router-outlet>
+  <div>
+    <div class="container">
+      <img src="https://www.runescape.com/img/rsp777/hiscores/scroll_top.gif" style="width:80%">
+      <div class="wrapper">
+        <router-outlet></router-outlet>
+      </div>
+      <img src="https://www.runescape.com/img/rsp777/hiscores/scroll_bottom.gif" style="width:80%">
+    </div>
+  </div>
+
 </mat-drawer-container>

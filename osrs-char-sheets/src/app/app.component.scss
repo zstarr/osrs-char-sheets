@@ -10,7 +10,7 @@ mat-toolbar {
 
 .sidenav-container {
   width: 100%;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 64px);
   background: url(https://www.runescape.com/img/rsp777/bg2.jpg);
   background-size: contain;
 }
@@ -23,4 +23,18 @@ mat-toolbar {
 
 .logout {
   margin-top: 10px;
+}
+
+.wrapper {
+  background: url(https://www.runescape.com/img/rsp777/hiscores/scroll_middle.gif);
+  background-size: contain;
+  width: 80%;
+  color: black;
+}
+
+.container {
+  text-align: -webkit-center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
