@@ -53,33 +53,48 @@ export class Abilities {
 
 export class Skills {
   //skills
-  acrobatics: number = 0;
-  arcana: number = 0;
-  athletics: number = 0;
-  deception: number = 0;
-  history: number = 0;
-  insight: number = 0;
-  intimidation: number = 0;
-  investigation: number = 0;
-  nature: number = 0;
-  perception: number = 0;
-  performance: number = 0;
-  persuation: number = 0;
-  religion: number = 0;
-  stealth: number = 0;
-  survival: number = 0;
+  acrobatics: Skill = { proficient: false, abilityMod: AbilitiesEnum.Dex, mod: 0 };
+  arcana: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
+  athletics: Skill = { proficient: false, abilityMod: AbilitiesEnum.Str, mod: 0 };
+  deception: Skill = { proficient: false, abilityMod: AbilitiesEnum.Cha, mod: 0 };
+  history: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
+  insight: Skill = { proficient: false, abilityMod: AbilitiesEnum.Wis, mod: 0 };
+  intimidation: Skill = { proficient: false, abilityMod: AbilitiesEnum.Cha, mod: 0 };
+  investigation: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
+  nature: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
+  perception: Skill = { proficient: false, abilityMod: AbilitiesEnum.Wis, mod: 0 };
+  performance: Skill = { proficient: false, abilityMod: AbilitiesEnum.Cha, mod: 0 };
+  persuation: Skill = { proficient: false, abilityMod: AbilitiesEnum.Cha, mod: 0 };
+  religion: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
+  stealth: Skill = { proficient: false, abilityMod: AbilitiesEnum.Dex, mod: 0 };
+  survival: Skill = { proficient: false, abilityMod: AbilitiesEnum.Wis, mod: 0 };
 
-  runecraft: number = 0;
-  construction: number = 0;
-  herblore: number = 0;
-  thieving: number = 0;
-  crafting: number = 0;
-  fletching: number = 0;
-  hunter: number = 0;
-  mining: number = 0;
-  smithing: number = 0;
-  fishing: number = 0;
-  cooking: number = 0;
-  woodcutting: number = 0;
-  farming: number = 0;
+  runecraft: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
+  construction: Skill = { proficient: false, abilityMod: AbilitiesEnum.Str, mod: 0 };
+  herblore: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
+  thieving: Skill = { proficient: false, abilityMod: AbilitiesEnum.Dex, mod: 0 };
+  crafting: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
+  fletching: Skill = { proficient: false, abilityMod: AbilitiesEnum.Dex, mod: 0 };
+  hunter: Skill = { proficient: false, abilityMod: AbilitiesEnum.Dex, mod: 0 };
+  mining: Skill = { proficient: false, abilityMod: AbilitiesEnum.Str, mod: 0 };
+  smithing: Skill = { proficient: false, abilityMod: AbilitiesEnum.Str, mod: 0 };
+  fishing: Skill = { proficient: false, abilityMod: AbilitiesEnum.Wis, mod: 0 };
+  cooking: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
+  woodcutting: Skill = { proficient: false, abilityMod: AbilitiesEnum.Str, mod: 0 };
+  farming: Skill = { proficient: false, abilityMod: AbilitiesEnum.Wis, mod: 0 };
+}
+
+export class Skill {
+  proficient: boolean = false;
+  abilityMod!: AbilitiesEnum;
+  mod: number = 0;
+}
+
+export enum AbilitiesEnum {
+  Str,
+  Dex,
+  Con,
+  Wis,
+  Int,
+  Cha
 }

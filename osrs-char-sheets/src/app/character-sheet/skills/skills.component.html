@@ -1,0 +1,33 @@
+<div [formGroup]="formGroup" id="skills">
+  <mat-card class="parent-card">
+    <mat-card-header>
+      <div mat-card-avatar>
+          <mat-icon class="avatar-icon">account_circle</mat-icon>
+      </div>
+      <mat-card-title>Skills</mat-card-title>
+      <mat-card-subtitle>Chop chop!</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+      <!-- Acrobatics -->
+      <div formGroupName="skills">
+        <mat-checkbox formControlName="acrobatics.proficient" labelPosition="before">Acrobatics</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Acrobatics</mat-label>
+          <input matInput disabled type="number" value="4">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Acrobatics Ability Score</mat-label>
+          <input matInput type="number" disabled value="0">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Acrobatics Mod</mat-label>
+          <input matInput type="number" placeholder="Acrobatics Mod" formControlName="acrobatics.mod">
+        </mat-form-field>
+        <br>
+
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

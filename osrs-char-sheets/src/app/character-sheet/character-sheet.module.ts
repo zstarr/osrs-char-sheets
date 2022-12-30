@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AbilitiesComponent } from './abilities/abilities.component';
 import { GeneralComponent } from './general/general.component';
+import { SkillsComponent } from './skills/skills.component';
 import { DefenseComponent } from './defense/defense.component';
 import { SpellsComponent } from './spells/spells.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -24,6 +25,7 @@ import { AngularMaterialModule } from '../core/angular-material/angular-material
     CharacterDeleteDialog,
     AbilitiesComponent,
     GeneralComponent,
+    SkillsComponent,
     DefenseComponent,
     SpellsComponent,
     NavBarComponent

@@ -73,7 +73,9 @@ export class CharacterSheetComponent implements OnInit, OnDestroy {
         chaAbilityScore: [''],
         tempChaScore: [''],
       }),
-
+      skills: this.fb.group({
+        acrobatics: ['']
+      }),
       //defense
       tempACMod: [''],
       totalHp: [''],
