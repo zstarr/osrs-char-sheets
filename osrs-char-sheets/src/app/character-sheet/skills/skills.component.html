@@ -8,24 +8,565 @@
       <mat-card-subtitle>Chop chop!</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
+      <div formGroupName="skills">
 
       <!-- Acrobatics -->
-      <div formGroupName="skills">
-        <mat-checkbox formControlName="acrobatics.proficient" labelPosition="before">Acrobatics</mat-checkbox>
-        <mat-form-field appearance="fill">
-          <mat-label>Acrobatics</mat-label>
-          <input matInput disabled type="number" value="4">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Acrobatics Ability Score</mat-label>
-          <input matInput type="number" disabled value="0">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Acrobatics Mod</mat-label>
-          <input matInput type="number" placeholder="Acrobatics Mod" formControlName="acrobatics.mod">
-        </mat-form-field>
+        <div formGroupName="acrobatics" class="skill">
+          <mat-checkbox formControlName="proficient">Acrobatics</mat-checkbox>
+          <mat-form-field appearance="fill">
+            <mat-label>Acrobatics</mat-label>
+            <input matInput disabled type="number" value="{{characterService.acrobaticsMod | async}}">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Acrobatics Ability Score</mat-label>
+            <input matInput type="number" disabled
+              value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.acrobatics.abilityMod')?.value) | async}}">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Acrobatics Mod</mat-label>
+            <input matInput type="number" placeholder="Acrobatics Mod" formControlName="mod">
+          </mat-form-field>
+        </div>
+
         <br>
 
+      <!-- Arcana -->
+      <div formGroupName="arcana" class="skill">
+        <mat-checkbox formControlName="proficient">Arcana</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Arcana</mat-label>
+          <input matInput disabled type="number" value="{{characterService.arcanaMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Arcana Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.arcana.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Arcana Mod</mat-label>
+          <input matInput type="number" placeholder="Arcana Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Athletics -->
+      <div formGroupName="athletics" class="skill">
+        <mat-checkbox formControlName="proficient">Athletics</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Athletics</mat-label>
+          <input matInput disabled type="number" value="{{characterService.athleticsMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Athletics Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.athletics.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Athletics Mod</mat-label>
+          <input matInput type="number" placeholder="Athletics Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Deception -->
+      <div formGroupName="deception" class="skill">
+        <mat-checkbox formControlName="proficient">Deception</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Deception</mat-label>
+          <input matInput disabled type="number" value="{{characterService.deceptionMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Deception Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.deception.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Deception Mod</mat-label>
+          <input matInput type="number" placeholder="Deception Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- History -->
+      <div formGroupName="history" class="skill">
+        <mat-checkbox formControlName="proficient">History</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>History</mat-label>
+          <input matInput disabled type="number" value="{{characterService.historyMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>History Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.history.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>History Mod</mat-label>
+          <input matInput type="number" placeholder="History Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Insight -->
+      <div formGroupName="insight" class="skill">
+        <mat-checkbox formControlName="proficient">Insight</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Insight</mat-label>
+          <input matInput disabled type="number" value="{{characterService.insightMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Insight Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.insight.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Insight Mod</mat-label>
+          <input matInput type="number" placeholder="Insight Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Intimidation -->
+      <div formGroupName="intimidation" class="skill">
+        <mat-checkbox formControlName="proficient">Intimidation</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Intimidation</mat-label>
+          <input matInput disabled type="number" value="{{characterService.intimidationMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Intimidation Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.intimidation.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Intimidation Mod</mat-label>
+          <input matInput type="number" placeholder="Intimidation Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Investigation -->
+      <div formGroupName="investigation" class="skill">
+        <mat-checkbox formControlName="proficient">Investigation</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Investigation</mat-label>
+          <input matInput disabled type="number" value="{{characterService.investigationMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Investigation Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.investigation.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Investigation Mod</mat-label>
+          <input matInput type="number" placeholder="Investigation Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Nature -->
+      <div formGroupName="nature" class="skill">
+        <mat-checkbox formControlName="proficient">Nature</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Nature</mat-label>
+          <input matInput disabled type="number" value="{{characterService.natureMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Nature Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.nature.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Nature Mod</mat-label>
+          <input matInput type="number" placeholder="Nature Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Perception -->
+      <div formGroupName="perception" class="skill">
+        <mat-checkbox formControlName="proficient">Perception</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Perception</mat-label>
+          <input matInput disabled type="number" value="{{characterService.perceptionMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Perception Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.perception.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Perception Mod</mat-label>
+          <input matInput type="number" placeholder="Perception Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Performance -->
+      <div formGroupName="performance" class="skill">
+        <mat-checkbox formControlName="proficient">Performance</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Performance</mat-label>
+          <input matInput disabled type="number" value="{{characterService.performanceMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Performance Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.performance.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Performance Mod</mat-label>
+          <input matInput type="number" placeholder="Performance Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Persuasion -->
+      <div formGroupName="persuasion" class="skill">
+        <mat-checkbox formControlName="proficient">Persuasion</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Persuasion</mat-label>
+          <input matInput disabled type="number" value="{{characterService.persuasionMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Persuasion Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.persuasion.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Persuasion Mod</mat-label>
+          <input matInput type="number" placeholder="Persuasion Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Religion -->
+      <div formGroupName="religion" class="skill">
+        <mat-checkbox formControlName="proficient">Religion</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Religion</mat-label>
+          <input matInput disabled type="number" value="{{characterService.religionMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Religion Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.religion.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Religion Mod</mat-label>
+          <input matInput type="number" placeholder="Religion Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Stealth -->
+      <div formGroupName="stealth" class="skill">
+        <mat-checkbox formControlName="proficient">Stealth</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Stealth</mat-label>
+          <input matInput disabled type="number" value="{{characterService.stealthMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Stealth Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.stealth.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Stealth Mod</mat-label>
+          <input matInput type="number" placeholder="Stealth Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Survival -->
+      <div formGroupName="survival" class="skill">
+        <mat-checkbox formControlName="proficient">Survival</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Survival</mat-label>
+          <input matInput disabled type="number" value="{{characterService.survivalMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Survival Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.survival.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Survival Mod</mat-label>
+          <input matInput type="number" placeholder="Survival Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Runecraft -->
+      <div formGroupName="runecraft" class="skill">
+        <mat-checkbox formControlName="proficient">Runecraft</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Runecraft</mat-label>
+          <input matInput disabled type="number" value="{{characterService.runecraftMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Runecraft Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.runecraft.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Runecraft Mod</mat-label>
+          <input matInput type="number" placeholder="Runecraft Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Construction -->
+      <div formGroupName="construction" class="skill">
+        <mat-checkbox formControlName="proficient">Construction</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Construction</mat-label>
+          <input matInput disabled type="number" value="{{characterService.constructionMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Construction Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.construction.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Construction Mod</mat-label>
+          <input matInput type="number" placeholder="Construction Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Herblore -->
+      <div formGroupName="herblore" class="skill">
+        <mat-checkbox formControlName="proficient">Herblore</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Herblore</mat-label>
+          <input matInput disabled type="number" value="{{characterService.herbloreMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Herblore Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.herblore.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Herblore Mod</mat-label>
+          <input matInput type="number" placeholder="Herblore Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Thieving -->
+      <div formGroupName="thieving" class="skill">
+        <mat-checkbox formControlName="proficient">Thieving</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Thieving</mat-label>
+          <input matInput disabled type="number" value="{{characterService.thievingMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Thieving Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.thieving.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Thieving Mod</mat-label>
+          <input matInput type="number" placeholder="Thieving Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Crafting -->
+      <div formGroupName="crafting" class="skill">
+        <mat-checkbox formControlName="proficient">Crafting</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Crafting</mat-label>
+          <input matInput disabled type="number" value="{{characterService.craftingMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Crafting Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.crafting.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Crafting Mod</mat-label>
+          <input matInput type="number" placeholder="Crafting Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Fletching -->
+      <div formGroupName="fletching" class="skill">
+        <mat-checkbox formControlName="proficient">Fletching</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Fletching</mat-label>
+          <input matInput disabled type="number" value="{{characterService.fletchingMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Fletching Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.fletching.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Fletching Mod</mat-label>
+          <input matInput type="number" placeholder="Fletching Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Hunter -->
+      <div formGroupName="hunter" class="skill">
+        <mat-checkbox formControlName="proficient">Hunter</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Hunter</mat-label>
+          <input matInput disabled type="number" value="{{characterService.hunterMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Hunter Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.hunter.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Hunter Mod</mat-label>
+          <input matInput type="number" placeholder="Hunter Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Mining -->
+      <div formGroupName="mining" class="skill">
+        <mat-checkbox formControlName="proficient">Mining</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Mining</mat-label>
+          <input matInput disabled type="number" value="{{characterService.miningMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Mining Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.mining.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Mining Mod</mat-label>
+          <input matInput type="number" placeholder="Mining Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Smithing -->
+      <div formGroupName="smithing" class="skill">
+        <mat-checkbox formControlName="proficient">Smithing</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Smithing</mat-label>
+          <input matInput disabled type="number" value="{{characterService.smithingMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Smithing Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.smithing.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Smithing Mod</mat-label>
+          <input matInput type="number" placeholder="Smithing Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Fishing -->
+      <div formGroupName="fishing" class="skill">
+        <mat-checkbox formControlName="proficient">Fishing</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Fishing</mat-label>
+          <input matInput disabled type="number" value="{{characterService.fishingMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Fishing Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.fishing.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Fishing Mod</mat-label>
+          <input matInput type="number" placeholder="Fishing Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Cooking -->
+      <div formGroupName="cooking" class="skill">
+        <mat-checkbox formControlName="proficient">Cooking</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Cooking</mat-label>
+          <input matInput disabled type="number" value="{{characterService.cookingMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Cooking Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.cooking.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Cooking Mod</mat-label>
+          <input matInput type="number" placeholder="Cooking Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Woodcutting -->
+      <div formGroupName="woodcutting" class="skill">
+        <mat-checkbox formControlName="proficient">Woodcutting</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Woodcutting</mat-label>
+          <input matInput disabled type="number" value="{{characterService.woodcuttingMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Woodcutting Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.woodcutting.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Woodcutting Mod</mat-label>
+          <input matInput type="number" placeholder="Woodcutting Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
+
+      <br>
+
+      <!-- Farming -->
+      <div formGroupName="farming" class="skill">
+        <mat-checkbox formControlName="proficient">Farming</mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Farming</mat-label>
+          <input matInput disabled type="number" value="{{characterService.farmingMod | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Farming Ability Score</mat-label>
+          <input matInput type="number" disabled
+            value="{{characterService.getAbilityModFromEnum(formGroup.get('skills.farming.abilityMod')?.value) | async}}">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Farming Mod</mat-label>
+          <input matInput type="number" placeholder="Farming Mod" formControlName="mod">
+        </mat-form-field>
+      </div>
 
       </div>
     </mat-card-content>

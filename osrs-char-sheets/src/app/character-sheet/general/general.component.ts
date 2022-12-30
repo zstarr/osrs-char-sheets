@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { CharacterService } from 'src/app/core/services/character.service';
 import { CharacterSize, CharacterSizes } from "../../core/models/character-size.model";
 
 @Component({
@@ -13,7 +14,7 @@ export class GeneralComponent implements OnInit {
 
   characterSizes: CharacterSize[] = CharacterSizes;
 
-  constructor() { }
+  constructor(public characterService: CharacterService) { }
 
   ngOnInit(): void {
   }

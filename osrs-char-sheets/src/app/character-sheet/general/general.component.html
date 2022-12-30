@@ -21,6 +21,12 @@
         <input matInput placeholder="Character Level" formControlName="level" type="number" min="1" max="20">
       </mat-form-field>
 
+      <!-- Proficiency -->
+      <mat-form-field appearance="fill">
+        <mat-label>Proficiency</mat-label>
+        <input matInput type="number" disabled value="{{ characterService.profMod | async }}">
+      </mat-form-field>
+
       <!-- Diety -->
       <mat-form-field appearance="fill">
         <mat-label>Diety</mat-label>

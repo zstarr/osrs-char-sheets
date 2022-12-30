@@ -74,7 +74,34 @@ export class CharacterSheetComponent implements OnInit, OnDestroy {
         tempChaScore: [''],
       }),
       skills: this.fb.group({
-        acrobatics: ['']
+        acrobatics: this.getSkillGroup(),
+        arcana: this.getSkillGroup(),
+        athletics: this.getSkillGroup(),
+        deception: this.getSkillGroup(),
+        history: this.getSkillGroup(),
+        insight: this.getSkillGroup(),
+        intimidation: this.getSkillGroup(),
+        investigation: this.getSkillGroup(),
+        nature: this.getSkillGroup(),
+        perception: this.getSkillGroup(),
+        performance: this.getSkillGroup(),
+        persuasion: this.getSkillGroup(),
+        religion: this.getSkillGroup(),
+        stealth: this.getSkillGroup(),
+        survival: this.getSkillGroup(),
+        runecraft: this.getSkillGroup(),
+        construction: this.getSkillGroup(),
+        herblore: this.getSkillGroup(),
+        thieving: this.getSkillGroup(),
+        crafting: this.getSkillGroup(),
+        fletching: this.getSkillGroup(),
+        hunter: this.getSkillGroup(),
+        mining: this.getSkillGroup(),
+        smithing: this.getSkillGroup(),
+        fishing: this.getSkillGroup(),
+        cooking: this.getSkillGroup(),
+        woodcutting: this.getSkillGroup(),
+        farming: this.getSkillGroup()
       }),
       //defense
       tempACMod: [''],
@@ -84,6 +111,15 @@ export class CharacterSheetComponent implements OnInit, OnDestroy {
         //sr
     });
 
+  }
+
+  getSkillGroup() {
+
+    return this.fb.group({
+      proficient: [''],
+      mod: [''],
+      abilityMod: ['']
+    });
   }
 
   onChanges() {

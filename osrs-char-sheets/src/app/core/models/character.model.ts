@@ -64,7 +64,7 @@ export class Skills {
   nature: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
   perception: Skill = { proficient: false, abilityMod: AbilitiesEnum.Wis, mod: 0 };
   performance: Skill = { proficient: false, abilityMod: AbilitiesEnum.Cha, mod: 0 };
-  persuation: Skill = { proficient: false, abilityMod: AbilitiesEnum.Cha, mod: 0 };
+  persuasion : Skill = { proficient: false, abilityMod: AbilitiesEnum.Cha, mod: 0 };
   religion: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
   stealth: Skill = { proficient: false, abilityMod: AbilitiesEnum.Dex, mod: 0 };
   survival: Skill = { proficient: false, abilityMod: AbilitiesEnum.Wis, mod: 0 };
@@ -81,7 +81,7 @@ export class Skills {
   fishing: Skill = { proficient: false, abilityMod: AbilitiesEnum.Wis, mod: 0 };
   cooking: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
   woodcutting: Skill = { proficient: false, abilityMod: AbilitiesEnum.Str, mod: 0 };
-  farming: Skill = { proficient: false, abilityMod: AbilitiesEnum.Wis, mod: 0 };
+  farming: Skill = { proficient: false, abilityMod: AbilitiesEnum.Int, mod: 0 };
 }
 
 export class Skill {
