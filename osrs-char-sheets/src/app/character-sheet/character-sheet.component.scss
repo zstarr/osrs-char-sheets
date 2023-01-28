@@ -25,3 +25,16 @@ mat-card-title {
 .skill {
   text-align: left;
 }
+
+.mat-mdc-card {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+::ng-deep .mdc-text-field {
+  background: transparent !important;
+}
+
+::ng-deep .mdc-menu-surface {
+  background: url('../../assets/scroll-bg.png') !important;
+}
