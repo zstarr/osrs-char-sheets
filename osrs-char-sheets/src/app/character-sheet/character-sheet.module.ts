@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from '../core/angular-material/angular-material.module';
 import { SavesComponent } from './saves/saves.component';
 import { NotesComponent } from './notes/notes.component';
+import { OffenseComponent } from './offense/offense.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { NotesComponent } from './notes/notes.component';
     GeneralComponent,
     SkillsComponent,
     SavesComponent,
+    OffenseComponent,
     DefenseComponent,
     SpellsComponent,
     NotesComponent,

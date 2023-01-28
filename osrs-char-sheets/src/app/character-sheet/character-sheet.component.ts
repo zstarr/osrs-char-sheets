@@ -108,6 +108,7 @@ export class CharacterSheetComponent implements OnInit, OnDestroy {
         woodcutting: this.getSkillGroup(),
         farming: this.getSkillGroup()
       }),
+      offense: [''],
       //defense
       tempACMod: [''],
       totalHp: [''],

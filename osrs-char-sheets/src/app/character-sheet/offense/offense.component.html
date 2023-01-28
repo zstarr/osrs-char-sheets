@@ -1,0 +1,20 @@
+<div [formGroup]="formGroup">
+  <mat-card class="parent-card" id="offense">
+    <mat-card-header>
+      <div mat-card-avatar>
+          <mat-icon class="avatar-icon">key</mat-icon>
+      </div>
+      <mat-card-title>Offense</mat-card-title>
+      <mat-card-subtitle>And my axe!</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+      <!-- Offense -->
+      <mat-form-field class="full-width">
+        <mat-label>Offense</mat-label>
+        <textarea matInput placeholder="Write stuff here" formControlName="offense"></textarea>
+      </mat-form-field>
+
+    </mat-card-content>
+  </mat-card>
+</div>
