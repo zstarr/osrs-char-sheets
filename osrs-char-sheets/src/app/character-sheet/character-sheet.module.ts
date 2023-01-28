@@ -12,6 +12,8 @@ import { CharacterDeleteDialog } from './nav-bar/nav-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularMaterialModule } from '../core/angular-material/angular-material.module';
+import { SavesComponent } from './saves/saves.component';
+import { NotesComponent } from './notes/notes.component';
 
 @NgModule({
   imports: [
@@ -26,8 +28,10 @@ import { AngularMaterialModule } from '../core/angular-material/angular-material
     AbilitiesComponent,
     GeneralComponent,
     SkillsComponent,
+    SavesComponent,
     DefenseComponent,
     SpellsComponent,
+    NotesComponent,
     NavBarComponent
   ]
 })

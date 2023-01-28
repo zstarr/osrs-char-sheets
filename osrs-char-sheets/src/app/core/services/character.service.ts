@@ -33,6 +33,13 @@ export class CharacterService {
   wisMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   chaMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
+  strSaveMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  dexSaveMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  conSaveMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  intSaveMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  wisSaveMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  chaSaveMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
   profMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   acrobaticsMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
@@ -68,8 +75,6 @@ export class CharacterService {
   armorMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   sizeMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  lolCount: number = 0;
-
   constructor(
     private router: Router,
     private db: AngularFireDatabase,
@@ -89,6 +94,7 @@ export class CharacterService {
         this.profMod.next(this.getProfMod(nextVal!));
         this.updateAbilityScores(nextVal!);
         this.updateSkills(nextVal!);
+        this.updateSaves(nextVal!);
         this.sizeMod.next(
           CharacterSizes.find(charSize => charSize.creatureSize == nextVal?.description.size)?.mod ?? 0
         );
@@ -104,6 +110,33 @@ export class CharacterService {
     this.intMod.next(Math.floor((char.abilities.intAbilityScore + char.abilities.tempIntScore - 10) / 2));
     this.wisMod.next(Math.floor((char.abilities.wisAbilityScore + char.abilities.tempWisScore - 10) / 2));
     this.chaMod.next(Math.floor((char.abilities.chaAbilityScore + char.abilities.tempChaScore - 10) / 2));
+  }
+
+  updateSaves(char: Character) {
+    this.strSaveMod.next(Math.floor((
+      this.strMod.value +
+      (char.saves.strength.proficient ? this.profMod.value : 0)
+    )));
+    this.dexSaveMod.next(Math.floor((
+      this.dexMod.value +
+      (char.saves.dexterity.proficient ? this.profMod.value : 0)
+    )));
+    this.conSaveMod.next(Math.floor((
+      this.conMod.value +
+      (char.saves.constitution.proficient ? this.profMod.value : 0)
+    )));
+    this.intSaveMod.next(Math.floor((
+      this.intMod.value +
+      (char.saves.intelligence.proficient ? this.profMod.value : 0)
+    )));
+    this.wisSaveMod.next(Math.floor((
+      this.wisMod.value +
+      (char.saves.wisdom.proficient ? this.profMod.value : 0)
+    )));
+    this.chaSaveMod.next(Math.floor((
+      this.chaMod.value +
+      (char.saves.charisma.proficient ? this.profMod.value : 0)
+    )));
   }
 
   updateSkills(char: Character) {
@@ -344,7 +377,6 @@ export class CharacterService {
   }
 
   getAbilityModFromEnum(e: AbilitiesEnum): BehaviorSubject<number> {
-    console.log(this.lolCount++)
     switch(e) {
       case AbilitiesEnum.Cha:
         return this.chaMod;
@@ -359,10 +391,6 @@ export class CharacterService {
       case AbilitiesEnum.Wis:
         return this.wisMod;
     }
-  }
-
-  calcSkillMod() {
-    return 3;
   }
 
   getProfMod(character: Character) {

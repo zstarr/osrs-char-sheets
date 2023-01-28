@@ -1,0 +1,69 @@
+<div [formGroup]="formGroup" id="saves">
+  <mat-card class="parent-card">
+    <mat-card-header>
+      <div mat-card-avatar>
+          <mat-icon class="avatar-icon">save</mat-icon>
+      </div>
+      <mat-card-title>Saves</mat-card-title>
+      <mat-card-subtitle>Uh oh...</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div formGroupName="saves">
+
+        <!-- Strength Save -->
+        <div formGroupName="strength" class="saves">
+          <mat-checkbox formControlName="proficient">Strength</mat-checkbox>
+          <mat-form-field appearance="fill">
+            <mat-label>Mod</mat-label>
+            <input matInput disabled type="number" value="{{characterService.strSaveMod | async}}">
+          </mat-form-field>
+        </div>
+
+        <!-- Dexterity Save -->
+          <div formGroupName="dexterity" class="saves">
+            <mat-checkbox formControlName="proficient">Dexterity</mat-checkbox>
+            <mat-form-field appearance="fill">
+              <mat-label>Mod</mat-label>
+              <input matInput disabled type="number" value="{{characterService.dexSaveMod | async}}">
+            </mat-form-field>
+          </div>
+
+        <!-- Constitution Save -->
+        <div formGroupName="constitution" class="saves">
+          <mat-checkbox formControlName="proficient">Constitution</mat-checkbox>
+          <mat-form-field appearance="fill">
+            <mat-label>Mod</mat-label>
+            <input matInput disabled type="number" value="{{characterService.conSaveMod | async}}">
+          </mat-form-field>
+        </div>
+
+        <!-- Intelligence Save -->
+          <div formGroupName="intelligence" class="saves">
+            <mat-checkbox formControlName="proficient">Intelligence</mat-checkbox>
+            <mat-form-field appearance="fill">
+              <mat-label>Mod</mat-label>
+              <input matInput disabled type="number" value="{{characterService.intSaveMod | async}}">
+            </mat-form-field>
+          </div>
+
+        <!-- Wisdom Save -->
+        <div formGroupName="wisdom" class="saves">
+          <mat-checkbox formControlName="proficient">Wisdom</mat-checkbox>
+          <mat-form-field appearance="fill">
+            <mat-label>Mod</mat-label>
+            <input matInput disabled type="number" value="{{characterService.wisSaveMod | async}}">
+          </mat-form-field>
+        </div>
+
+        <!-- Charisma Save -->
+          <div formGroupName="charisma" class="saves">
+            <mat-checkbox formControlName="proficient">Charisma</mat-checkbox>
+            <mat-form-field appearance="fill">
+              <mat-label>Mod</mat-label>
+              <input matInput disabled type="number" value="{{characterService.chaSaveMod | async}}">
+            </mat-form-field>
+          </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

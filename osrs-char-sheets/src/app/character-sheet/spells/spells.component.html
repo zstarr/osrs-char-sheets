@@ -8,7 +8,32 @@
       <mat-card-subtitle>And Powers</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
+      <div formGroupName="spells">
+        <!-- Ability Mod -->
+        <mat-form-field appearance="fill">
+          <mat-label>Ability Mod</mat-label>
+          <input matInput placeholder="Ability Mod" formControlName="abilityMod">
+        </mat-form-field>
 
+        <!-- Save DC -->
+        <mat-form-field appearance="fill">
+          <mat-label>Save DC</mat-label>
+          <input matInput placeholder="Save DC" formControlName="saveDC" type="number">
+        </mat-form-field>
+
+        <!-- Attack Bonus -->
+        <mat-form-field appearance="fill">
+          <mat-label>Attack Bonus</mat-label>
+          <input matInput placeholder="Attack Bonus" formControlName="attackBonus" type="number">
+        </mat-form-field>
+
+        <br>
+        <!-- Notes -->
+        <mat-form-field class="full-width">
+          <mat-label>Spells</mat-label>
+          <textarea matInput placeholder="Write stuff here" formControlName="notes"></textarea>
+        </mat-form-field>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

@@ -23,20 +23,6 @@
 
       <br>
 
-      <div formGroupName="saves">
-
-        <!-- Charisma Save -->
-          <div formGroupName="charisma" class="saves">
-            <mat-checkbox formControlName="proficient">Charisma</mat-checkbox>
-            <mat-form-field appearance="fill">
-              <mat-label>Charisma</mat-label>
-              <input matInput disabled type="number" value="{{characterService.chaMod | async}}">
-            </mat-form-field>
-          </div>
-      </div>
-
-      <br>
-
       <!-- AC -->
       <mat-form-field appearance="fill">
         <mat-label>AC</mat-label>

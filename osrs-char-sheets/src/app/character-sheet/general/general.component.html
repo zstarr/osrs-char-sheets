@@ -27,6 +27,12 @@
         <input matInput placeholder="Class" formControlName="class">
       </mat-form-field>
 
+      <!-- Hit Dice -->
+      <mat-form-field appearance="fill">
+        <mat-label>Hit Dice</mat-label>
+        <input matInput placeholder="Hit Dice" formControlName="hitDice">
+      </mat-form-field>
+
       <!-- Proficiency -->
       <mat-form-field appearance="fill">
         <mat-label>Proficiency</mat-label>
@@ -93,6 +99,25 @@
       <mat-form-field appearance="fill">
         <mat-label>Eyes</mat-label>
         <input matInput placeholder="Eyes" formControlName="eyes">
+      </mat-form-field>
+
+      <!-- Init -->
+      <mat-form-field appearance="fill">
+        <mat-label>Initiative</mat-label>
+        <input matInput placeholder="Initiative" formControlName="init" type="number">
+      </mat-form-field>
+
+      <!-- Speed -->
+      <mat-form-field appearance="fill">
+        <mat-label>Speed</mat-label>
+        <input matInput placeholder="Speed" formControlName="speed" type="number">
+      </mat-form-field>
+
+      <br>
+      <!-- Languages -->
+      <mat-form-field class="full-width">
+        <mat-label>Languages</mat-label>
+        <textarea matInput placeholder="Write stuff here" formControlName="languages"></textarea>
       </mat-form-field>
 
     </mat-card-content>

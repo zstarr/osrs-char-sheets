@@ -1,3 +1,4 @@
+import { SpellsComponent } from "src/app/character-sheet/spells/spells.component";
 import { Sizes } from "./character-size.model";
 
 export class Character {
@@ -9,17 +10,25 @@ export class Character {
   characterName: string = "";
   level: number = 1;
   class: string = "";
+  hitDie: number = 0;
+  init: number = 0;
+  speed: number = 0;
+  languages: string = "";
 
   description: Description = new Description;
   abilities: Abilities = new Abilities;
+
+  saves: Saves = new Saves;
 
   tempACMod: number = 0;
   totalHp: number = 0;
   currentHp: number = 0;
 
-  languages: string[] = [];
-
   skills: Skills = new Skills;
+
+  spells: Spells = new Spells;
+
+  notes: string = "";
 }
 
 export class Description {
@@ -53,6 +62,11 @@ export class Abilities {
 }
 
 export class Saves {
+  strength: Save = { proficient: false };
+  dexterity: Save = { proficient: false };
+  constitution: Save = { proficient: false };
+  intelligence: Save = { proficient: false };
+  wisdom: Save = { proficient: false };
   charisma: Save = { proficient: false };
 }
 
@@ -106,4 +120,10 @@ export enum AbilitiesEnum {
   Wis,
   Int,
   Cha
+}
+
+export class Spells {
+  abilityMod: string = "";
+  saveDC: number = 0;
+  attackBonus: number = 0;
 }
