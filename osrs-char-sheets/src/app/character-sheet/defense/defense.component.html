@@ -9,6 +9,34 @@
     </mat-card-header>
     <mat-card-content>
 
+      <!-- HP - current -->
+      <mat-form-field appearance="fill">
+        <mat-label>Current HP</mat-label>
+        <input matInput placeholder="Current HP" type="number"  formControlName="currentHp">
+      </mat-form-field>
+
+      <!-- HP - max -->
+      <mat-form-field appearance="fill">
+        <mat-label>Total HP</mat-label>
+        <input matInput placeholder="Total HP" type="number"  formControlName="totalHp">
+      </mat-form-field>
+
+      <br>
+
+      <div formGroupName="saves">
+
+        <!-- Charisma Save -->
+          <div formGroupName="charisma" class="saves">
+            <mat-checkbox formControlName="proficient">Charisma</mat-checkbox>
+            <mat-form-field appearance="fill">
+              <mat-label>Charisma</mat-label>
+              <input matInput disabled type="number" value="{{characterService.chaMod | async}}">
+            </mat-form-field>
+          </div>
+      </div>
+
+      <br>
+
       <!-- AC -->
       <mat-form-field appearance="fill">
         <mat-label>AC</mat-label>
@@ -39,20 +67,6 @@
       <mat-form-field appearance="fill">
         <mat-label>Other AC Mod</mat-label>
         <input matInput type="number" placeholder="Temp AC mod" formControlName="tempACMod">
-      </mat-form-field>
-
-      <br>
-
-      <!-- HP - current -->
-      <mat-form-field appearance="fill">
-        <mat-label>Current HP</mat-label>
-        <input matInput placeholder="Current HP" type="number"  formControlName="currentHp">
-      </mat-form-field>
-
-      <!-- HP - max -->
-      <mat-form-field appearance="fill">
-        <mat-label>Total HP</mat-label>
-        <input matInput placeholder="Total HP" type="number"  formControlName="totalHp">
       </mat-form-field>
 
     </mat-card-content>

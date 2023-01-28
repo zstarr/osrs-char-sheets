@@ -8,6 +8,7 @@ export class Character {
   id!: number;
   characterName: string = "";
   level: number = 1;
+  class: string = "";
 
   description: Description = new Description;
   abilities: Abilities = new Abilities;
@@ -49,6 +50,14 @@ export class Abilities {
   tempWisScore: number = 0;
   chaAbilityScore: number = 10;
   tempChaScore: number = 0;
+}
+
+export class Saves {
+  charisma: Save = { proficient: false };
+}
+
+export class Save {
+  proficient: boolean = false
 }
 
 export class Skills {

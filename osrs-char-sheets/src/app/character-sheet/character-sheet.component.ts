@@ -49,6 +49,7 @@ export class CharacterSheetComponent implements OnInit, OnDestroy {
       characterName: [''],
       alignment: [''],
       level: [1],
+      class: [''],
       diety: [''],
       homeland: [''],
       race: [''],
@@ -106,7 +107,10 @@ export class CharacterSheetComponent implements OnInit, OnDestroy {
       //defense
       tempACMod: [''],
       totalHp: [''],
-      currentHp: ['']
+      currentHp: [''],
+      saves: this.fb.group({
+        charisma: this.getSaveGroup(),
+      })
         //dr
         //sr
     });
@@ -114,11 +118,16 @@ export class CharacterSheetComponent implements OnInit, OnDestroy {
   }
 
   getSkillGroup() {
-
     return this.fb.group({
       proficient: [''],
       mod: [''],
       abilityMod: ['']
+    });
+  }
+
+  getSaveGroup() {
+    return this.fb.group({
+      proficient: [''],
     });
   }
 

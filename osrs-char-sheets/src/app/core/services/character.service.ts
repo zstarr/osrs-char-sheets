@@ -68,6 +68,8 @@ export class CharacterService {
   armorMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   sizeMod: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
+  lolCount: number = 0;
+
   constructor(
     private router: Router,
     private db: AngularFireDatabase,
@@ -342,6 +344,7 @@ export class CharacterService {
   }
 
   getAbilityModFromEnum(e: AbilitiesEnum): BehaviorSubject<number> {
+    console.log(this.lolCount++)
     switch(e) {
       case AbilitiesEnum.Cha:
         return this.chaMod;
