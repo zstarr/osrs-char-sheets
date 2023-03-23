@@ -27,16 +27,28 @@
         <input matInput placeholder="Class" formControlName="class">
       </mat-form-field>
 
-      <!-- Hit Dice -->
+      <!-- Background -->
       <mat-form-field appearance="fill">
-        <mat-label>Hit Dice</mat-label>
-        <input matInput placeholder="Hit Dice" formControlName="hitDice">
+        <mat-label>Background</mat-label>
+        <input matInput placeholder="Background" formControlName="background">
+      </mat-form-field>
+
+      <!-- Hit Die -->
+      <mat-form-field appearance="fill">
+        <mat-label>Hit Die</mat-label>
+        <input matInput placeholder="Hit Die" formControlName="hitDie">
       </mat-form-field>
 
       <!-- Proficiency -->
       <mat-form-field appearance="fill">
         <mat-label>Proficiency</mat-label>
         <input matInput type="number" disabled value="{{ characterService.profMod | async }}">
+      </mat-form-field>
+
+      <!-- Inspiration -->
+      <mat-form-field appearance="fill">
+        <mat-label>Inspiration</mat-label>
+        <input matInput placeholder="Inspiration" formControlName="inspiration" type="number" min="0">
       </mat-form-field>
 
       <!-- Diety -->

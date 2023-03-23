@@ -15,6 +15,8 @@ export class Character {
   speed: number = 0;
   languages: string = "";
 
+  inspiration: number = 0;
+
   description: Description = new Description;
   abilities: Abilities = new Abilities;
 
@@ -32,6 +34,7 @@ export class Character {
 }
 
 export class Description {
+  background: string = ""
   diety: string = "";
   homeland: string = "";
   race: string = "";
